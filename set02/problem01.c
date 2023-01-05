@@ -16,8 +16,8 @@ int area_of_triangle(int b,int h){
 
 #include<stdio.h>
 
-float input(float base, float height);
-float find_area(float base , float height, float area);
+float input();
+void find_area(float base , float height, float *area);
 void output(float base, float height, float area);
 
 int main()
@@ -25,23 +25,23 @@ int main()
   float base,height,area;
   base=input();
   height=input();
-  find_area(base,height,area);
+  find_area(base,height,&area);
   output(base,height,area);
   return 0;
 }
 
-float input(float base, float height){
+float input(){
   float n;
   printf("Enter base and height:");
   scanf("%f",&n);
-  return 0;
+  return n;
 }
 
-float find_area(float base , float height, float *area){
-  return (1/2)*base*height;
+void find_area(float base , float height, float *area){
+  *area = (base*height)*(1.0/2.0);
 }
 
 void output(float base, float height, float area){
-  area=(1/2)*base*height;
+  
   printf("The area of the traingle with base %f and height %f is %f",base,height,area);
 }
