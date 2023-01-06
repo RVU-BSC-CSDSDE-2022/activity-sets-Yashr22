@@ -78,20 +78,12 @@ void input_array(int n, int a[n])
 }
 int sum_composite_numbers(int n, int a[n])
 {
-  int i,isprime=0,sum=0;
-  for(i=1;i<n;i++)
-     {
-     for(int counter = 2; counter<= a[i]/2; counter++)
-     {
-        if((a[i]%counter) == 0)
-        {
-          isprime=1;}
-     }
-      if(isprime==1)
-      {
-        sum = sum+a[i];
-      } 
-     } 
+  int count=0,i,sum;
+  for(i=1; i<=n; i++){
+    if(a[n]%i==0){
+      sum=sum+i;
+    }
+  }
   return sum;
 }
 void output(int sum)
