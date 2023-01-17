@@ -10,27 +10,29 @@ int main()
   a=input();
   b=input();
 
-  find_gcd(a,b);
+  gcd=find_gcd(a,b);
   output(a,b,gcd);
   return 0;
 }
 
 int input(){
   int n;
-  printf("Enter the 1st number :");
+  printf("Enter the number :");
   scanf("%d",&n);
+  return n;
 }
 int find_gcd(int a, int b){
-  int gcd=1;
-  for(int i=1; i <= a || i <= b; i++) {
-    if(a%i == 0 && b%i == 0){
+  int gcd=0;
+  for(int i=1; i<=a || i<=b; i++){
+    if(a%i==0 && b%i==0){
       gcd=i;
     }
   }
   return gcd;
 }
+
 void output(int a, int b, int gcd){
-  printf("gcd = %d",gcd);
+  printf("gcd of %d and %d is %d",a,b,gcd);
 }
 
 /*#include<stdio.h>

@@ -120,9 +120,9 @@ complex add_n_complex(int n, complex c[n]){
 }
 void output(int n, complex c[n], complex result){
   int i;
-  for(i=0; i<n; i++){
-    printf("%f+i%f",c[i].real,c[i].img);
+  for(i=0; i<n-1; i++){
+    printf("%.2f+i%.2f+",c[i].real,c[i].img);
   }
-  printf("%f+i%f",c[n-1].real,c[n-1].img);
-  printf("is %f+i%f", result.real,result.img);
+  printf("%.2f+i%.2f=",c[n-1].real,c[n-1].img);
+  printf("is %.2f+i%.2f", result.real,result.img);
 }

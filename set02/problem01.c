@@ -1,19 +1,3 @@
-/*#include<stdio.h>
-
-int area_of_triangle(int b,int h);
-
-int main()
-{
-  int b=10;
-  int h=4;
-  printf("The area of triangle with base %d and height %d is ",b,h);
-  printf("%d\n",area_of_triangle(b,h));
-}
-
-int area_of_triangle(int b,int h){
-   return (b*h)/2;
-}*/
-
 #include<stdio.h>
 
 float input();

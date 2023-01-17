@@ -4,8 +4,11 @@ int stringcompare(char *string1, char *string2);
 void output(char *string1, char *string2, int result);
 int main()
 {
-  char string1[20] , string2[20];
-  input_two_strings(&string1, &string2);
+  char string1[100] , string2[100];
+  int result = 0;
+  input_two_strings(string1, string2);
+  result = stringcompare(string1,string2);
+  output(string1,string2,result);
 }
 
 void input_two_strings(char *string1, char *string2)
@@ -14,38 +17,43 @@ void input_two_strings(char *string1, char *string2)
   scanf("%s", string1);
   printf("Enter the second string\n");
   scanf("%s", string2);
-  int result = stringcompare(string1,string2);
-  output(string1,string2,result);
 }
 
 int stringcompare(char *string1, char *string2)
 {
-  int var=0,i=0;
-  while (string1[i] != '\0' && string2[i] != '\0')
-    {
-      
-      if(string1[i] > string2[i])
-      {
-        var=1;
-        break;
-      }
-      
-      else if (string2[i] > string1[i])
-      {
-        var=-1;
-        break;
-      }
-      i++;
+  int i=0, var=0, result=0;
+  for(i=0; string1[i]!='\0' && string2[i]!='\0'; i++){
+    if(string1[i]!=string2[i]){
+      var=1;
+      break;
     }
-  
-  if(var==1) 
-  {printf("First string %s is greater than the second string %s\n",string1,string2);}
-  else if(var==-1)
-  {printf("Second string %s is greater than the first string %s\n",string2,string1);}
-  return 0;
+  }
+  if(var==0){
+    if(string1[i]!='\0' && string2[i]!='\0')
+      return 0;
+    if(string1[i]!='\0')
+      return 1;
+    if(string2[i]!='\0')
+      return 2;
+  }
+  if(var==1){
+    if(string1[i] > string2[i])
+      return 1;
+    else 
+      return 2;
+  }
 }
 
 void output(char *string1, char *string2, int result)
-{
-  printf("The output is %d",result);
+{  
+    
+  if(result==0){
+    printf("string %s is equal to string %s\n",string1,string2);
+  }
+  if(result==1){
+    printf("String %s is greater than %s\n",string1,string2);
+  }
+  if(result==2){
+    printf("String %s is smaller than %s\n",string1,string2);
+  }
 }
