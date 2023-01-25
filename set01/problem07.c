@@ -7,9 +7,9 @@ void output(int n, int sum);
 
 int main()
 {
-  int a,n,sum;
-  a=input_n();
-  sum_n_nos(n);
+  int n,sum;
+  n=input_n();
+  sum=sum_n_nos(n);
   output(n,sum);
 }
 
@@ -21,7 +21,7 @@ int input_n(){
 }
 
 int sum_n_nos(int n){
-  int sum;
+  int sum=0;
   for(int i=0;i<=n;i++){
     sum = sum + i;
   }
@@ -29,5 +29,5 @@ int sum_n_nos(int n){
 }
 
 void output(int n, int sum){
-  printf("The sum of %d natural numbe is %d",n,sum);
+  printf("The sum of first %d natural number is %d",n,sum);
 }

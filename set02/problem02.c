@@ -19,7 +19,7 @@ int input_side(){
   int x;
   printf("Enter the sides :");
   scanf("%d",&x);
-  return 0;
+  return x;
 }
 
 int check_scalene(int a, int b, int c){

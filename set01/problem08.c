@@ -35,7 +35,7 @@ int sum_n_array(int n, int a[n]){
 void output(int n, int a[n],int sum){
   printf("The sum of ");
   for(int i; i<n; i++){
-    printf("%d",a[i]);
+    printf("%d\t",a[i]);
   }
   printf("is %d",sum);
 }

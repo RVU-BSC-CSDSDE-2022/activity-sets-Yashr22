@@ -20,29 +20,25 @@ int input_number(){
 }
 
 int is_prime(int n){
-  // int i,result=0;
-  // if(n==0 || n==1)
-  //   result=1;
-  
-  // for(i=2; i<=n/2; ++i){
-  //   if(n%i==0){
-  //     result=1;
-  //     break;
+  // int result=0,var;
+  // for(int i=1; i<=n; i++){
+  //   if((n%i) == 0){
+  //     var++;
   //   }
   // }
-  int result=0,var;
-  for(int i=1; i<=n; i++){
-    if((n%i) == 0){
-      var++;
+  // if(var>2){
+  //   result=1;
+  // }
+  // else{
+  //   result=2;
+  // }
+  // return result;
+  for(int i=2; i<n ;i++){
+    if(n%i==0){
+      return 1;
     }
   }
-  if(var>2){
-    result=1;
-  }
-  else{
-    result=2;
-  }
-  return result;
+  return 2;
 }
 
 void output(int n, int result){
