@@ -6,9 +6,12 @@ void erotosthenes_sieve(int n, int a[n]);
 void output(int n, int a[n]);
 
 int main(){
-  int n ,a[n];
+  int n;
   n=input_array_size();
+  int a[n];
   init_array(n, a);
+  erotosthenes_sieve(n,a);
+  output(n,a);
 }
 
 int input_array_size(){
@@ -19,8 +22,27 @@ int input_array_size(){
 }
 
 void init_array(int n, int a[n]){
-  for(int i=0; i<n; i++){
-    printf("Element at index %d :",i);
-    scanf("%d",&a[i]);
+  
+  printf("Elements are ");
+  a[n+1];
+  for(int i=1; i<=n; i++){
+    a[i]=i;
+  }
+}
+void erotosthenes_sieve(int n, int a[n]){
+  int i,j;
+  for(i=2; i*i<=n; i++){
+    if(a[i]!=-1){
+      for(j=2*i; j<=n; j+=i)
+        a[j]=-1;
+    }
+  }
+}
+void output(int n, int a[n]){
+  printf("Prime numbers are :\n");
+  for(int i=2; i<=n; i++){
+    if(a[i] != -1){
+      printf("%d\t",i);
+    }
   }
 }
