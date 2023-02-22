@@ -1,25 +1,25 @@
 #include<stdio.h>
 #include<math.h>
 
-int input_camel_details();
+void input_camel_details(float *radius, float *height, float *length);
 float find_weight(float radius, float height, float length);
 void output(float radius, float height, float length, float weight);
 
 int main(){
-  double radius, height, length,weight;
-  radius=input_camel_details();
-  height=input_camel_details();
-  length=input_camel_details();
+  float radius, height, length,weight;
+  input_camel_details(&radius,&height,&length);
   weight=find_weight(radius,height,length);
   output(radius,height,length,weight);
   return 0;
 }
 
-int input_camel_details(){
-  int n;
-  printf("Ente camel detail :");
-  scanf("%d",&n);
-  return n;
+void input_camel_details(float *radius, float *height, float *length){
+  printf("Ente radius :");
+  scanf("%f",radius);
+  printf("Enter height :");
+  scanf("%f",height);
+  printf("enter length :");
+  scanf("%f",length);
 }
 
 float find_weight(float radius, float height, float length){

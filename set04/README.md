@@ -116,7 +116,9 @@ The index of the largest number in the array is 2
 
 6. Write a program to count the number of words in a string using strtok (_string.h_)
 
-***Function Declarations***
+***Function D4
+4
+eclarations***
 ```c
 void input_string(char *a);
 int count_words(char *string);

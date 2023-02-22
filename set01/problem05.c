@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int input();
-int compare(int a, int b, int c, int largest);
+int compare(int a, int b, int c);
 void output(int a, int b, int c, int largest);
 
 int main()
@@ -10,7 +10,7 @@ int main()
   a=input();
   b=input();
   c=input();
-  largest=compare(a,b,c,largest);
+  largest=compare(a,b,c);
   output(a,b,c,largest);
   return 0;
 }
@@ -18,12 +18,13 @@ int main()
 int input()
 {
   int n;
-  printf("Enter the number:\n");
+  printf("Enter the number:");
   scanf("%d",&n);
   return n;
 }
 
-int compare(int a, int b, int c,int largest){
+int compare(int a, int b, int c){
+  int largest;
   if((a>b) && (a>c))
     largest = a;
   if((b>a) && (b>c))

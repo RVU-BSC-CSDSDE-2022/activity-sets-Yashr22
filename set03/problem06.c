@@ -1,20 +1,21 @@
 #include<stdio.h>
 
-void input_string(char *a, char *b);
+void input_string(char* a, char* b);
 int sub_str_index(char *string, char *substring);
-void output(char *string, char *substring, char index);
+void output(char *string, char *substring, int index);
 
 int main(){
-  char *a[100],*b[100],*string[100],*substring[100],index;
-  input_string(&a, &b);
-  index=sub_str_index(&string, &substring);
-  output(&string, &substring, index);
+  char a[100],b[100];
+  int index;
+  input_string(a, b);
+  index=sub_str_index(a,b);
+  output(a,b, index);
 }
 
-void input_string(char *a, char *b){
-  printf("Enter the first character :");
+void input_string(char* a, char* b){
+  printf("Enter the string :");
   scanf("%s",a);
-  printf("Enter the second character :");
+  printf("Enter the substring :");
   scanf("%s",b);
 }
 int sub_str_index(char *string, char *substring){
@@ -34,6 +35,6 @@ int sub_str_index(char *string, char *substring){
   }
   return index;
 }
-void output(char *string; char *substring, char index){
-printf("The index of '%s' in '%s' is %s",substring,string,index);
+void output(char *string, char *substring, int index){
+  printf("The index of '%s' in '%s' is %d",substring,string,index);
 }

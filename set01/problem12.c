@@ -64,7 +64,7 @@ void output(int n, Complex c[n], Complex result){
   printf("is %f+%fi",result.real,result.img);
 }*/
 
-# include<stdio.h>
+#include<stdio.h>
 struct complex {
  float real,img;
 };
@@ -123,6 +123,6 @@ void output(int n, complex c[n], complex result){
   for(i=0; i<n-1; i++){
     printf("%.2f+i%.2f+",c[i].real,c[i].img);
   }
-  printf("%.2f+i%.2f=",c[n-1].real,c[n-1].img);
-  printf("is %.2f+i%.2f", result.real,result.img);
+  printf("%.2f+i%.2f =",c[n-1].real,c[n-1].img);
+  printf(" %.2f+i%.2f", result.real,result.img);
 }

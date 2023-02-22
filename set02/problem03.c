@@ -31,9 +31,9 @@ int is_composite(int n){
 void output(int n, int result)
 {
   if(result == 1){
-    printf("%d is composit number\n",n);
+    printf("%d is composit number",n);
   }
   else if(result == 2){
-    printf("%d is not composite number\n",n);
+    printf("%d is not composite number",n);
   }
 }

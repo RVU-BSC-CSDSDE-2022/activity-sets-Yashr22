@@ -1,42 +1,42 @@
-#include<stdio.h>
-#include<math.h>
+#include <math.h>
+#include <stdio.h>
 
-struct _point{
-float x, y;
+struct _point {
+  float x;
+  float y; 
 };
 
-typedef struct _point point;
+typedef struct _point Point;
 
-point input();
-void dist(point a, point b, point *res);
-void output(point a, point b, point res);
+Point input();
+void dist(Point a, Point b, float *res);
+void output(Point a, Point b, float res);
 
-int main(){
-  point a,b,res,
-  a=input();
-  b=input();
-  res=dist(a,b,&res);
-  output(a,b,res);
+int main() {
+  Point a,b;
+  float res;
+  a = input();
+  b = input();
+  dist(a, b, &res);
+  output(a, b, res);
+  return 0;
 }
 
-point input(){
-  point p1;
-  printf("Enter pont a :");
-  scanf("%f",&p1.a);
-  printf("Enter point b :");
-  scanf("%f",&p1.b);
-  return p1;
+Point input() {
+  Point digit;
+  printf("Enter the points: ");
+  scanf("%f%f",&digit.x,&digit.y);
+  return digit;
 }
 
-void dist(point a, point b, point *res){
-  res=(b.x-a.x)*(b.x-a.x)+(b.y-a.y);
-  float x=4;
-  while(fabs(x*x-res)/2>0.0001){
-    x=(x+res/x)/2;
-  }
-  return x;
-  return res;
+void dist(Point a, Point b, float *res) {
+  float distx,disty,distance;
+  distx = (b.x-a.x)*(b.x-a.x);
+  disty = (b.y-a.y)*(b.y-a.y);
+  distance = distx + disty;
+  *res = sqrt(distance);
 }
-void output(point a, point b, point res){
-  printf("The Distance between (%f,%f) and (%f,%f) is %f",a.x,a.y,b.x,b.y,res);
+
+void output(Point a, Point b, float res) {
+  printf("The distance between (%.2f,%.2f) and (%.2f,%.2f) is %f ",a.x,a.y,b.x,b.y,res);
 }

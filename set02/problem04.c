@@ -10,7 +10,6 @@ int main()
   int n,sum;
   n=input_array_size();
   int arr[n];
-
   input_array(n,arr);
   sum = sum_composite_numbers( n, arr);
   output(sum);
@@ -18,7 +17,7 @@ int main()
 
 int input_array_size(){
   int n;
-  printf("Enter the size of arr:\n");
+  printf("Enter the size of arr:");
   scanf("%d",&n);
   return n;
 }
