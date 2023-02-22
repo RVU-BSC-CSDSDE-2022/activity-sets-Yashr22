@@ -28,3 +28,35 @@ int find_fibo(int n){
 void output(int n, int fibo){
   printf("fibo (%d) = %d",n,fibo);
 }
+/*#include<stdio.h>
+int input();
+int find_fibo(int n);
+void output(int n, int fibo);
+
+int main(){
+  int n, fibo;
+  n=input();
+  fibo=find_fibo(n);
+  output(n,fibo);
+}
+int input(){
+  int num;
+  printf("Enter the number :");
+  scanf("%d",&num);
+  return num;
+}
+int find_fibo(int n){
+  int a=0,b=1,c;
+  if(n==0){
+    return a;
+  }
+  for(int i=2; i<=n; i++){
+    c=a+b;
+    a=b;
+    b=c;
+  }
+  return b;
+}
+void output(int n, int fibo){
+  printf("fibo (%d) = %d",n,fibo);
+}*/

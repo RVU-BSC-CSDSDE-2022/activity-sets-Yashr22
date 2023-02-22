@@ -1,35 +1,27 @@
 #include<stdio.h>
+#include<math.h>
 
-int input();
+void input(float *x1, float *y1, float *x2, float *y2);
 float find_distance(float x1, float y1, float x2, float y2);
-float output(float x1, float y1, float x2, float y2, float distance);
+void output(float x1, float y1, float x2, float y2, float distance);
 
 int main(){
   float x1,x2,y1,y2,distance;
-  x1=input();
-  y1=input();
-  x2=input();
-  y2=input();
+  input(&x1,&y1,&x2,&y2);
   distance=find_distance(x1,y1,x2,y2);
   output(x1,y1,x2,y2,distance);
 }
-
-int input(){
-  int a;
-  printf("Enter the number :");
-  scanf("%d",&a);
-  return a;
+void input(float *x1, float *y1, float *x2, float *y2){
+  printf("Enter the coordinate of 1st point :");
+  scanf("%f%f",x1,y1);
+  printf("Enter the coordinate of 2nd point :");
+  scanf("%f%f",x2,y2);
 }
-float find_distance(float x1, float y1, float x2, float y2){
-  float distance;
-  distance=((x2-x1)*(x2-x1) +(y2-y1)*(y2-y1));
-  float x=4;
-  while(fabs(x*x-distance)/2>0.0001){
-    x=(x+distance/x)/2;
-  }
-  return x;
-  return distance;
+float find_distance(float x1, float y1, float x2,float y2){
+  float dist;
+  dist=sqrt((pow((x2-x1),2)+pow((y2-y1),2)));
+  return dist;
 }
-float output(float x1, float y1, float x2, float y2, float distance){
-  printf("The distance between point (%f %f) and (%f %f) is %f",x1,y1,x2,y2,distance);
+void output(float x1, float y1, float x2, float y2, float distance){
+  printf("The distance between point (%.2f, %.2f) and (%.2f, %.2f) is %f",x1,y1,x2,y2,distance);
 }
